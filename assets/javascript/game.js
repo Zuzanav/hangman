@@ -10,29 +10,33 @@ let words = ["demogorgan", "upside down", "eleven", "hawkins", "spy", "waffles",
 "magnets", "hopper", "starcourt"];
 
 
-// Variables for Scores
+// VARIABLES FOR SCORES
 let wins = 0;
 let losses = 0;
 let guesses = 6;
 let characterGuessed;
+
+// COMPUTER SELECTS RANDOM WORD --------------------------
+let randomWord = words[Math.floor(Math.random()*words.length)]
+console.log(randomWord);
 
 //-------------------------------------------------------------------------
 
 
 // FUNCTIONS  =====================================================================================
 
-// COMPUTER SELECTS RANDOM WORD --------------------------
-    function selectRandomWord() {
-        let randomWord = words[Math.floor(Math.random()*words.length)]
-        return randomWord;
+// array defined to hold the underscores representing letters not guessed yet, 
+// and also letters that will be guessed by the player 
+let answerArray = [];
+
+    // loop prints underscores "_" based on amount of characters in selected word
+    for (let i=0; i<randomWord.length; i++){
+        answerArray[i] = "_"
     };
 
-    let randomWord = selectRandomWord();
+// saving character count from selected word for comparison later...
+let wordCharCount = randomWord.length;
 
-    console.log(randomWord);
-
-
-
-
+console.log(answerArray);
 
 });  // end document ready function
