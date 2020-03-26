@@ -25,11 +25,10 @@ console.log(randomWord);
 
 // FUNCTIONS  =====================================================================================
 
-// array defined to hold the underscores representing letters not guessed yet, 
-// and also letters that will be guessed by the player 
+// array defined to hold the answer and display on DOM
 let answerArray = [];
 
-    // loop prints underscores "_" based on amount of characters in selected word
+    // loop creates x amount of underscores "_" based on amount of characters in selected word
     for (let i=0; i<randomWord.length; i++){
         answerArray[i] = "_"
     };
@@ -38,5 +37,18 @@ let answerArray = [];
 let wordCharCount = randomWord.length;
 
 console.log(answerArray);
+
+//write underscores to the DOM 
+$(document).ready(function(){ 
+    $("#randomWord").html(answerArray);
+})
+
+
+
+
+
+
+
+
 
 });  // end document ready function
