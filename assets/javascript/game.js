@@ -7,7 +7,7 @@ $(document).ready(function() {
 // Array with all letters of the alphabet for computer to choose from 
 
 let words = ["demogorgan", "upside down", "eleven", "hawkins", "spy", "waffles", 
-"magnets", "hopper", "starcourt"];
+"magnets", "hopper", "starcourt", "dart"];
 
 
 // variables for scores 
@@ -37,7 +37,11 @@ for (let i=0; i<randomWord.length; i++){
 // saving character count from selected word for comparison later...
 let wordCharCount = randomWord.length;
 
+// split randomWord into its individual characters
+let wordsChars = randomWord.split("")
+
 console.log(answerArray);
+console.log("words characters: " + wordsChars);
 
 //print underscores to the DOM 
 $(document).ready(function(){ 
@@ -46,18 +50,33 @@ $(document).ready(function(){
 // -----------------------------------------------------------------------------------------
 
 
+// FUNCTIONS ==================================================================================
+
+function game(){
+    let letterGuessed = event.key;
+    console.log(letterGuessed);
+}
+
+// -----------------------------------------------------------------------------------------
+
+
 // EVENTS =====================================================================================
 
 // Watch for user to press a key
 document.onkeyup = function () {
 
+    // Fail Safe - if key pressed does not equate to a letter A-Z, alert the player 
     if ( !(event.keyCode >= 65 && event.keyCode <= 90 ) ) {
         alert("Please select a letter only.")
-     } else { 
-        // save pressed key
-        let letterGuessed = event.key;
-        console.log(letterGuessed);
+    
+    // if key pressed is letter A-Z, continue game 
+     } else {
+        game();
+
      }
+
+
+
 
 }
 
