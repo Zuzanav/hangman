@@ -51,10 +51,13 @@ $(document).ready(function(){
 // Watch for user to press a key
 document.onkeyup = function () {
 
-    // save pressed key
-    let letterGuessed = event.key;
-
-    console.log(letterGuessed);
+    if ( !(event.keyCode >= 65 && event.keyCode <= 90 ) ) {
+        alert("Please select a letter only.")
+     } else { 
+        // save pressed key
+        let letterGuessed = event.key;
+        console.log(letterGuessed);
+     }
 
 }
 
