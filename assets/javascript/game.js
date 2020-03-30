@@ -58,12 +58,14 @@ function game(){
     console.log(letterGuessed);
 
     for (let i=0; i < charsArray.length; i++) {
-        if (charsArray[i] === letterGuessed) {
-            alert("you guessed right!")
 
+        if (charsArray[i] === letterGuessed) {
+            answerArray[i] = letterGuessed;
+            console.log("new answer array" + answerArray);
+        }
     }
 
-}
+};
 
 // -----------------------------------------------------------------------------------------
 
