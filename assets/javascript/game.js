@@ -34,6 +34,7 @@ for (let i=0; i<randomWord.length; i++){
     answerArray[i] = "_"
 };
 
+
 // saving character count from selected word for comparison later...
 let wordCharCount = randomWord.length;
 
@@ -62,6 +63,7 @@ function game(){
         if (charsArray[i] === letterGuessed) {
             answerArray[i] = letterGuessed;
             console.log("new answer array" + answerArray);
+            $("#randomWord").html(answerArray);
         }
     }
 
