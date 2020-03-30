@@ -6,15 +6,14 @@ $(document).ready(function() {
 //--------------------------------------------------------------------------------------
 // Array with all letters of the alphabet for computer to choose from 
 
-let words = ["demogorgan", "upside down", "eleven", "hawkins", "spy", "waffles", 
+let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles", 
 "magnets", "hopper", "starcourt", "dart"];
 
 
 // variables for scores 
-let wins = 0;
-let losses = 0;
 let guesses = 6;
 let characterGuessed;
+
 
 // array defined to hold the answer and display on DOM
 let answerArray = [];
@@ -34,7 +33,6 @@ for (let i=0; i<randomWord.length; i++){
     answerArray[i] = "_"
 };
 
-
 // saving character count from selected word for comparison later...
 let wordCharCount = randomWord.length;
 
@@ -53,6 +51,8 @@ $(document).ready(function(){
 
 // FUNCTIONS ==================================================================================
 
+
+
 function game(){
 
     let letterGuessed = event.key;
@@ -64,7 +64,7 @@ function game(){
             answerArray[i] = letterGuessed;
             console.log("new answer array" + answerArray);
             $("#randomWord").html(answerArray);
-        }
+            }
     }
 
 };
@@ -85,9 +85,6 @@ document.onkeyup = function () {
      } else {
         game();
      }
-
-
-
 
 }
 
