@@ -56,25 +56,48 @@ $(document).ready(function(){
 
 function game(){
 
+    // save user's guessed letter
     let letterGuessed = event.key;
     console.log(letterGuessed);
 
-    for (let i=0; i < charsArray.length; i++) {
+    var n = charsArray.includes(letterGuessed);
 
-        if (charsArray[i] === letterGuessed) {
-            answerArray[i] = letterGuessed;
-            console.log("new answer array" + answerArray);
-            $("#randomWord").html(answerArray);
-            numChars++;
+    // if character array does include letter guessed by user...
+    if (n === true ) {
+
+        numChars++;
+
+        // run this for loop...
+        for (let i=0; i < charsArray.length; i++) {
+
+            // if the character in the array matches the letter guessed by user...
+            if (charsArray[i] === letterGuessed) {
+                //update that character/letter in answerArray
+                answerArray[i] = letterGuessed;
+                console.log("new answer array" + answerArray);
+                //and re-render answerArray to the DOM to show user's answer
+                $("#randomWord").html(answerArray);
+                // increase amount of 
+                
+                }
             }
-            if (numChars === wordCharCount) {
-                setTimeout(function(){
-                    alert("winner!");
-                }, 500); //wait 500 milliseconds
-            }
+    // if character array does NOT include letter guessed by user...
+    } else {
+        guesses--;
+        $("#guesses").html("Guesses left: " + guesses);
+        console.log("Guesses Left: " + guesses);
+    }
+
+    if (!answerArray.includes("_")) {
+        setTimeout(function(){
+            alert("winner!");
+        }, 500); //wait 500 milliseconds
     }
 
 };
+
+
+
 
 // -----------------------------------------------------------------------------------------
 
