@@ -13,6 +13,7 @@ let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles",
 // variables for scores 
 let guesses = 6;
 let characterGuessed;
+let numChars = 0;
 
 
 // array defined to hold the answer and display on DOM
@@ -64,6 +65,12 @@ function game(){
             answerArray[i] = letterGuessed;
             console.log("new answer array" + answerArray);
             $("#randomWord").html(answerArray);
+            numChars++;
+            }
+            if (numChars === wordCharCount) {
+                setTimeout(function(){
+                    alert("winner!");
+                }, 500); //wait 500 milliseconds
             }
     }
 
