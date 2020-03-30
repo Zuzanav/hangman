@@ -38,10 +38,10 @@ for (let i=0; i<randomWord.length; i++){
 let wordCharCount = randomWord.length;
 
 // split randomWord into its individual characters
-let wordsChars = randomWord.split("")
+let charsArray = Array.from(randomWord)
 
 console.log(answerArray);
-console.log("words characters: " + wordsChars);
+console.log("words characters: " + charsArray);
 
 //print underscores to the DOM 
 $(document).ready(function(){ 
@@ -53,8 +53,16 @@ $(document).ready(function(){
 // FUNCTIONS ==================================================================================
 
 function game(){
+
     let letterGuessed = event.key;
     console.log(letterGuessed);
+
+    for (let i=0; i < charsArray.length; i++) {
+        if (charsArray[i] === letterGuessed) {
+            alert("you guessed right!")
+
+    }
+
 }
 
 // -----------------------------------------------------------------------------------------
@@ -72,7 +80,6 @@ document.onkeyup = function () {
     // if key pressed is letter A-Z, continue game 
      } else {
         game();
-
      }
 
 
