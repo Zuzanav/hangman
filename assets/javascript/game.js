@@ -13,7 +13,6 @@ let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles",
 // variables for scores 
 let guesses = 6;
 let characterGuessed;
-let numChars = 0;
 
 
 // array defined to hold the answer and display on DOM
@@ -56,46 +55,62 @@ $(document).ready(function(){
 
 function game(){
 
+    // FIRST ---------------------------------------------
     // save user's guessed letter
     let letterGuessed = event.key;
     console.log(letterGuessed);
 
-    var n = charsArray.includes(letterGuessed);
+    // SECOND -------------------------------------------
+    // compare user's guess with characters in array
+    var correctGuess = charsArray.includes(letterGuessed);
 
-    // if character array does include letter guessed by user...
-    if (n === true ) {
+    // THIRD --------------------------------------------
+    // If/Else Statement to guide game on correct or incorrect guess 
 
-        numChars++;
+    // IF user CORRECTLY guessed a letter...
+    if (correctGuess === true ) {
 
-        // run this for loop...
+        // run this for loop ...
         for (let i=0; i < charsArray.length; i++) {
 
             // if the character in the array matches the letter guessed by user...
             if (charsArray[i] === letterGuessed) {
+
                 //update that character/letter in answerArray
                 answerArray[i] = letterGuessed;
                 console.log("new answer array" + answerArray);
+
                 //and re-render answerArray to the DOM to show user's answer
                 $("#randomWord").html(answerArray);
-                // increase amount of 
-                
                 }
             }
-    // if character array does NOT include letter guessed by user...
+
+    // IF user DID NOT CORRECLTY guess a letter...
     } else {
         guesses--;
         $("#guesses").html("Guesses left: " + guesses);
         console.log("Guesses Left: " + guesses);
-    }
+    } // ---------------------- end of if/else statement
 
+
+    // FOURTH | DETERMINING THE WIN ------------------------------------------
+    // if the answerArray doesn't include anymore underscores - user wins!
     if (!answerArray.includes("_")) {
         setTimeout(function(){
             alert("winner!");
-        }, 500); //wait 500 milliseconds
-    }
+        }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
+    } else if (guesses === 0) {
+        setTimeout(function(){
+            alert("you lose!");
+        }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
+        document.onkeyup = function (e) {
+            e.preventDefault(); 
+        }
+    };
+
+
 
 };
-
 
 
 
