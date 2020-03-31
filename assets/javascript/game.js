@@ -118,7 +118,7 @@ function game(){
 
 // EVENTS =====================================================================================
 
-// Watch for user to press a key
+// WATCH FOR USER TO CLICK A KEY ------------------------------------------
 document.onkeyup = function () {
 
     // Fail Safe - if key pressed does not equate to a letter A-Z, alert the player 
@@ -130,6 +130,13 @@ document.onkeyup = function () {
         game();
      }
 }
+
+// WATCH FOR USER TO CLICK RESET BUTTON -----------------------------------
+document.getElementById("resetButton").onclick = function () {
+    alert("pressed!");
+}
+
+
 // -----------------------------------------------------
 
 
