@@ -5,18 +5,17 @@ $(document).ready(function() {
 
 //--------------------------------------------------------------------------------------
 // Array with all letters of the alphabet for computer to choose from 
-
 let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles", 
 "magnets", "hopper", "starcourt", "dart"];
 
-
-// variables for scores 
+// Amount of guesses per round 
 let guesses = 6;
-let characterGuessed;
-
 
 // array defined to hold the answer and display on DOM
 let answerArray = [];
+
+//setup Reset Button - hidden until end of game
+$('#resetButton').css('visibility','hidden');
 //-------------------------------------------------------------------------
 
 
@@ -32,9 +31,6 @@ for (let i=0; i<randomWord.length; i++){
     answerArray[i] = "_"
 };
 
-// saving character count from selected word for comparison later...
-let wordCharCount = randomWord.length;
-
 // split randomWord into its individual characters
 let charsArray = Array.from(randomWord)
 
@@ -46,14 +42,15 @@ $(document).ready(function(){
     $("#randomWord").html(answerArray);
 });
 
-//setup Reset Button - hidden until end of game
-$('#resetButton').css('visibility','hidden');
+
 // -----------------------------------------------------------------------------------------
 
 
 // FUNCTIONS ==================================================================================
 
-function game(){
+
+
+function game() {
 
     // FIRST ---------------------------------------------
     // save user's guessed letter
