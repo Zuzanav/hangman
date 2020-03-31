@@ -27,23 +27,27 @@
 
 <body>
 
-    <!-- TITLE -->
-    <h1> Stranger Things - Hangman </h1>
+    <!-- CONTAINER FOR GAME TEXT -->
+    <div id="intro-text">
 
-    <!-- IMAGE -->
+        <!-- TITLE -->
+        <h1> Stranger Things - Hangman </h1>
 
-    <div id="text-container">
-        <p> Channel your inner mind to guess the word... </p>
+        <div id="text-container">
+            <p> Channel your inner mind to guess the word... </p>
+            <br><br>
+            <p id="guesses">Guesses left: </p>
+            <br> <br> 
+            <p id="randomWord"></p>
+        </div>
         <br><br>
-        <p id="guesses">Guesses Left: </p>
-        <br> <br> 
-        <p id="randomWord"></p>
     </div>
-    <br><br>
 
+    <!-- START AND RESET BUTTON -->
     <div>
-        <button type="button" id="resetButton" >Play Again!</button>
+        <button type="button" id="resetButton"> Start Game! </button>
     </div>
+
 
 </body>
 
