@@ -18,6 +18,8 @@ let characterGuessed;
 // array defined to hold the answer and display on DOM
 let answerArray = [];
 
+$('#resetButton').css('visibility','hidden');
+
 //-------------------------------------------------------------------------
 
 
@@ -94,14 +96,18 @@ function game(){
 
 
     // FOURTH | DETERMINING THE WIN ------------------------------------------
-    // if the answerArray doesn't include anymore underscores - user wins!
+    // IF the answerArray doesn't include anymore underscores - user WINS!
     if (!answerArray.includes("_")) {
         setTimeout(function(){
             alert("winner!");
         }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
+
+    // ELSE IF user RUNS OUT of Guesses - user LOSES!
     } else if (guesses === 0) {
+    
         setTimeout(function(){
             alert("you lose!");
+            $('#resetButton').css('visibility','visible');
         }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
         document.onkeyup = function (e) {
             e.preventDefault(); 
