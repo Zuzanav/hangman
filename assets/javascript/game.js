@@ -17,9 +17,6 @@ let characterGuessed;
 
 // array defined to hold the answer and display on DOM
 let answerArray = [];
-
-$('#resetButton').css('visibility','hidden');
-
 //-------------------------------------------------------------------------
 
 
@@ -48,12 +45,13 @@ console.log("words characters: " + charsArray);
 $(document).ready(function(){ 
     $("#randomWord").html(answerArray);
 });
+
+//setup Reset Button - hidden until end of game
+$('#resetButton').css('visibility','hidden');
 // -----------------------------------------------------------------------------------------
 
 
 // FUNCTIONS ==================================================================================
-
-
 
 function game(){
 
@@ -114,12 +112,7 @@ function game(){
         }
     };
 
-
-
 };
-
-
-
 // -----------------------------------------------------------------------------------------
 
 
@@ -136,10 +129,7 @@ document.onkeyup = function () {
      } else {
         game();
      }
-
 }
-
-
 // -----------------------------------------------------
 
 
