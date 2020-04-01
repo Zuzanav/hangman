@@ -55,8 +55,9 @@ body {
 
 #the-title {
     justify-self: center;
-    color:#D02116;
-    text-shadow: 0 0 40px #8E1706;
+    color:rgb(88, 16, 5);
+    text-shadow: 0 0 40px #D02116;
+    -webkit-text-stroke: 2px #D02116;
 }
 
 /* SCORE BOX ---------------------------------- */
@@ -129,22 +130,13 @@ body {
 
 #you-win {
     color: white;
-    text-shadow: 0 0 20px #23CDF2;
+    text-shadow: 0 0 40px #23CDF2;
     font-size: 100px;
     justify-content: center;
     justify-self: center;
     padding: 10px;
+    -webkit-text-stroke: 2px black;
 }
-
-#you-lose {
-    color: white;
-    text-shadow: 0 0 20px red;
-    font-size: 100px;
-    justify-content: center;
-    justify-self: center;
-    padding: 10px;
-}
-
   
 
 #random-word-box {
