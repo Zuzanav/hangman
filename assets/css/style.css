@@ -27,7 +27,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 #resetButton {
@@ -44,7 +44,7 @@ h1 {
     border-radius: 4px;
 }
 
-#intro-text, #text-container {
+#intro-text, #text-container, #music-player {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
@@ -68,4 +68,8 @@ h1 {
 #music-controller{
     color: white;
     background-color: black;
+}
+
+#music-player, #pause-player {
+    font-size: 30px;
 }

@@ -31,21 +31,28 @@
         <img src="assets/images/ST_BG.png">
     </div>
 
-    <!-- CONTAINER FOR GAME TEXT -->
+    <!-- CONTAINER FOR GAME TEXT ----------->
     <div id="intro-text">
 
         <div id="text-container">
             <p id="randomWord"></p>
             <p id="guesses">GUESSES LEFT: </p>
+            <p id="all-guesses">ALREADY GUESSED: </p>
         </div>
     </div>
 
-    <!-- START AND RESET BUTTON -->
+    <!-- START AND RESET BUTTON ------------>
     <div id="button-container">
         <button type="button" id="resetButton"> START GAME </button>
     </div>
+    
 
-    <audio controls autoplay id="music-controller">
+    <!-- MUSIC ----------------------------->
+    <button id="music-player" type="button">&#9835;</button>
+    <button id="pause-player" type="button">&#8214;</button>
+
+
+    <audio id="music-controller">
         <source src="./assets/images/theme.mp3" type="audio/mpeg">
     </audio>
 

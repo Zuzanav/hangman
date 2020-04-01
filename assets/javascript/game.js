@@ -8,11 +8,26 @@ $(document).ready(function() {
     // START BUTTON
     $('#resetButton').css('visibility','visible');
 
+    // MUSIC CONTROLLERS ----------------------------------------------
+
+    // When Musical Note button is pressed, play music 
+    document.getElementById("music-player").onclick = function () {
+        document.getElementById("music-controller").play();
+    }
+
+    // When pause button is pressed, paused music 
+    document.getElementById("pause-player").onclick = function () {
+        document.getElementById("music-controller").pause();
+    }
+
+
     // WATCH FOR USER TO CLICK START BUTTON ----------------------------------
     document.getElementById("resetButton").onclick = function () {
         // RUN THE GAME
         wholeGame();
-        }
+    }
+
+    
 });
 // -------------------------------------------------------------------------------------
 
@@ -112,6 +127,9 @@ function wholeGame() {
                         // push wrong guess to array for later comparison
                         wrongAnswers.push(letterGuessed);
                         console.log("Wrong Answer: " + wrongAnswers);
+                        
+                        $("#all-guesses").html("ALREADY GUESSED: " + wrongAnswers);
+
                         }
 
         }
@@ -182,7 +200,6 @@ function wholeGame() {
     document.getElementById("resetButton").onclick = function () {
         wholeGame();
     }
-
 
     // -----------------------------------------------------
 
