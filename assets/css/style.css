@@ -37,7 +37,7 @@ h1 {
     color: white;
     padding: 20px;
     font-family: 'IM Fell English SC', serif;
-    font-size: 18px;
+    font-size: 25px;
     color: red;
     background-color: black;
     border: 1px solid white;
@@ -56,13 +56,24 @@ h1 {
     font-family: 'IM Fell English SC', serif;
 }
 
+#all-guesses {
+    font-size: 30px;
+    letter-spacing: 0.9em;
+    font-family: 'IM Fell English SC', serif;
+    margin-bottom: 5%;
+}
+
 #guesses {
     font-family: 'IM Fell English SC', serif;
     justify-self: center;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-bottom: 5%;
-    font-size: 20px;
+    font-size: 40px;
     color: red;
+}
+
+#guesses-left-text {
+    margin-top: 5%;
 }
 
 #music-controller{
@@ -72,4 +83,15 @@ h1 {
 
 #music-player, #pause-player {
     font-size: 30px;
+    width: 50px;
+    background-color: black;
+    color: red;
+    border: none;
+}
+
+#music-div {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
 }

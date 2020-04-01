@@ -47,7 +47,7 @@ function wholeGame() {
     let guesses = 6;
 
     // Display to users amount of guesses left 
-    $("#guesses").html("GUESSES LEFT: " + guesses);
+    $("#guesses").html(guesses);
 
     // array defined to hold the answer and display on DOM
     let answerArray = [];
@@ -121,14 +121,14 @@ function wholeGame() {
                         guesses--;
 
                         // update guesses left on DOM 
-                        $("#guesses").html("GUESSES LEFT: " + guesses);
+                        $("#guesses").html(guesses);
                         console.log("Guesses Left: " + guesses);
 
                         // push wrong guess to array for later comparison
                         wrongAnswers.push(letterGuessed);
                         console.log("Wrong Answer: " + wrongAnswers);
                         
-                        $("#all-guesses").html("ALREADY GUESSED: " + wrongAnswers);
+                        $("#all-guesses").html(wrongAnswers);
 
                         }
 

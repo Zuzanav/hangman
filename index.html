@@ -36,8 +36,10 @@
 
         <div id="text-container">
             <p id="randomWord"></p>
-            <p id="guesses">GUESSES LEFT: </p>
-            <p id="all-guesses">ALREADY GUESSED: </p>
+            <p id="guesses-left-text">GUESSES LEFT: </p>
+            <p id="guesses"></p>
+            <p>ALREADY GUESSED: </p>
+            <p id="all-guesses"></p>
         </div>
     </div>
 
@@ -48,9 +50,10 @@
     
 
     <!-- MUSIC ----------------------------->
-    <button id="music-player" type="button">&#9835;</button>
-    <button id="pause-player" type="button">&#8214;</button>
-
+    <div id="music-div">
+        <button id="music-player" type="button">&#9835;</button>
+        <button id="pause-player" type="button">&#8214;</button>
+    </div>
 
     <audio id="music-controller">
         <source src="./assets/images/theme.mp3" type="audio/mpeg">
