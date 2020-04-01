@@ -5,6 +5,7 @@ $(document).ready(function() {
     // HIDE GAME TEXT
     $('#score-box').css('visibility','hidden');
     $('#randomWord').css('visibility','hidden');
+    $('#you-win').css('visibility','hidden');
 
     // START BUTTON
     $('#resetButton').css('visibility','visible');
@@ -40,11 +41,12 @@ function wholeGame() {
     // HIDE GAME TEXT
     $('#score-box').css('visibility','visible');
     $('#randomWord').css('visibility','visible');
+    $('#you-win').css('visibility','hidden');
 
     // VARIABLES ----------------------------------------------------------------
     // Array with all letters of the alphabet for computer to choose from 
     let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles", 
-    "magnets", "hopper", "starcourt", "dart", "joyce", "mouthbreather", "arcade", "dustin"];
+    "magnets", "hopper", "starcourt", "dart", "joyce", "arcade", "dustin"];
 
     // Amount of guesses per round 
     let guesses = 6;
@@ -163,8 +165,11 @@ function wholeGame() {
         // FOURTH | DETERMINING THE WIN ------------------------------------------
         // IF the answerArray doesn't include anymore underscores - user WINS!
         if (!answerArray.includes("_")) {
+
             setTimeout(function(){
-                alert("winner!");
+
+                $('#you-win').css('visibility','visible').html("YOU WIN");
+
                 $('#resetButton').html('Play Again!').css('visibility','visible');
             }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
             document.onkeyup = function (e) {
@@ -174,7 +179,7 @@ function wholeGame() {
         } else if (guesses === 0) {
         
             setTimeout(function(){
-                alert("you lose!");
+                $('#you-win').css('visibility','visible').html("YOU LOSE");
                 $('#resetButton').html('Play Again!').css('visibility','visible');
             }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
             document.onkeyup = function (e) {
