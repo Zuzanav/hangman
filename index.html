@@ -21,32 +21,33 @@
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 
     <!-- LINK TO GOOGLE FONTS -------------------------------------------------------------->
-    <link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+    <div id="main-img">
+        <img src="assets/images/ST_BG.png">
+    </div>
+
     <!-- CONTAINER FOR GAME TEXT -->
     <div id="intro-text">
 
-        <!-- TITLE -->
-        <h1> Stranger Things - Hangman </h1>
-
         <div id="text-container">
-            <p> Channel your inner mind to guess the word... </p>
-            <br><br>
-            <p id="guesses">Guesses left: </p>
-            <br> <br> 
             <p id="randomWord"></p>
+            <p id="guesses">GUESSES LEFT: </p>
         </div>
-        <br><br>
     </div>
 
     <!-- START AND RESET BUTTON -->
-    <div>
-        <button type="button" id="resetButton"> Start Game! </button>
+    <div id="button-container">
+        <button type="button" id="resetButton"> START GAME </button>
     </div>
+
+    <audio controls autoplay id="music-controller">
+        <source src="./assets/images/theme.mp3" type="audio/mpeg">
+    </audio>
 
 
 </body>

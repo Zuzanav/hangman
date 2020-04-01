@@ -26,13 +26,13 @@ function wholeGame() {
     // VARIABLES ----------------------------------------------------------------
     // Array with all letters of the alphabet for computer to choose from 
     let words = ["demogorgan", "eleven", "hawkins", "spy", "waffles", 
-    "magnets", "hopper", "starcourt", "dart"];
+    "magnets", "hopper", "starcourt", "dart", "joyce", "mouthbreather", "arcade", "dustin"];
 
     // Amount of guesses per round 
     let guesses = 6;
 
     // Display to users amount of guesses left 
-    $("#guesses").html("Guesses left: " + guesses);
+    $("#guesses").html("GUESSES LEFT: " + guesses);
 
     // array defined to hold the answer and display on DOM
     let answerArray = [];
@@ -106,7 +106,7 @@ function wholeGame() {
                         guesses--;
 
                         // update guesses left on DOM 
-                        $("#guesses").html("Guesses left: " + guesses);
+                        $("#guesses").html("GUESSES LEFT: " + guesses);
                         console.log("Guesses Left: " + guesses);
 
                         // push wrong guess to array for later comparison
@@ -133,12 +133,6 @@ function wholeGame() {
                     $("#randomWord").html(answerArray);
                     }
                 }
-
-
-
-
-
-
 
         } // ---------------------- end of if/else statement
 
