@@ -3,7 +3,8 @@
 $(document).ready(function() {
     
     // HIDE GAME TEXT
-    $('#text-container').css('visibility','hidden');
+    $('#score-box').css('visibility','hidden');
+    $('#randomWord').css('visibility','hidden');
 
     // START BUTTON
     $('#resetButton').css('visibility','visible');
@@ -36,7 +37,8 @@ $(document).ready(function() {
 function wholeGame() {
     
     // HIDE GAME TEXT
-    $('#text-container').css('visibility','visible');
+    $('#score-box').css('visibility','visible');
+    $('#randomWord').css('visibility','visible');
 
     // VARIABLES ----------------------------------------------------------------
     // Array with all letters of the alphabet for computer to choose from 

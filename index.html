@@ -22,32 +22,42 @@
 
     <!-- LINK TO GOOGLE FONTS -------------------------------------------------------------->
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium:700,800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div id="main-img">
-        <img src="assets/images/ST_BG.png">
-    </div>
-
-    <!-- CONTAINER FOR GAME TEXT ----------->
-    <div id="intro-text">
-
-        <div id="text-container">
-            <p id="randomWord"></p>
-            <p id="guesses-left-text">GUESSES LEFT: </p>
-            <p id="guesses"></p>
-            <p>ALREADY GUESSED: </p>
-            <p id="all-guesses"></p>
-        </div>
+    <div id="title-box">
+        <p id="the-title">WORD GUESS</p>
     </div>
 
     <!-- START AND RESET BUTTON ------------>
     <div id="button-container">
         <button type="button" id="resetButton"> START GAME </button>
     </div>
-    
+
+    <!-- CONTAINER FOR GAME SCORES ----------->
+    <div id="score-box">
+
+        <!-- GUESSES LEFT --->
+        <div id="guesses-left-box">
+            <p id="guesses-left-text">GUESSES LEFT: </p>
+            <p id="guesses"></p>
+        </div>
+
+        <div id="random-word-box">
+            <p id="randomWord"></p>
+        </div>
+
+        <!-- LETTERS GUESSED WRONG -->
+        <div id="letters-guessed-box">
+            <p>ALREADY GUESSED: </p>
+            <p id="all-guesses"></p>
+        </div>
+
+    </div>
+
 
     <!-- MUSIC ----------------------------->
     <div id="music-div">
