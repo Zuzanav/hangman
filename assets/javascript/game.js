@@ -37,6 +37,9 @@ function wholeGame() {
     // array defined to hold the answer and display on DOM
     let answerArray = [];
 
+    // array defined to hold INCORRECT answers
+    let wrongAnswers = [];
+
     //setup Reset Button - hidden until end of game
     $('#resetButton').css('visibility','hidden');
     //--------------------------------------------------------------------------
@@ -85,8 +88,36 @@ function wholeGame() {
         // THIRD --------------------------------------------
         // If/Else Statement to guide game on correct or incorrect guess 
 
+        // if user selects a letter they already guessed correctly...
+        if (answerArray.includes(letterGuessed)) {
+            alert("You already picked that")
+
+        // IF user DID NOT CORRECLTY guess a letter correctly...
+        } else if (correctGuess === !true) {
+            
+            // wrong answer is compared to array which stores incorrect guesses
+            var repeat = wrongAnswers.includes(letterGuessed)
+
+                // if answer is in wrongArray, it is a repeat and user will be notified
+                if (repeat === true) {
+                        alert("You already guessed that letter")
+                } else {
+                        // decrease guesses left by 1
+                        guesses--;
+
+                        // update guesses left on DOM 
+                        $("#guesses").html("Guesses left: " + guesses);
+                        console.log("Guesses Left: " + guesses);
+
+                        // push wrong guess to array for later comparison
+                        wrongAnswers.push(letterGuessed);
+                        console.log("Wrong Answer: " + wrongAnswers);
+                        }
+
+        }
+
         // IF user CORRECTLY guessed a letter...
-        if (correctGuess === true ) {
+        else if (correctGuess === true ) {
 
             // run this for loop ...
             for (let i=0; i < charsArray.length; i++) {
@@ -103,11 +134,12 @@ function wholeGame() {
                     }
                 }
 
-        // IF user DID NOT CORRECLTY guess a letter...
-        } else {
-            guesses--;
-            $("#guesses").html("Guesses left: " + guesses);
-            console.log("Guesses Left: " + guesses);
+
+
+
+
+
+
         } // ---------------------- end of if/else statement
 
 
