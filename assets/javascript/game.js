@@ -35,6 +35,7 @@ $(document).ready(function() {
 
 // HANGMAN GAME CONTAINER ================================================================
 function wholeGame() {
+
     
     // HIDE GAME TEXT
     $('#score-box').css('visibility','visible');
@@ -84,6 +85,8 @@ function wholeGame() {
     $(document).ready(function(){ 
         $("#randomWord").html(answerArray);
     });
+
+    $("#all-guesses").html(wrongAnswers);
 
 
     // -------------------------------------------------------------------------------
