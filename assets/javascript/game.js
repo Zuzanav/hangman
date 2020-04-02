@@ -98,6 +98,8 @@ function wholeGame() {
 
     function game() {
 
+        $("#random-word-box").focus();
+
         // FIRST ---------------------------------------------
         // save user's guessed letter
         let letterGuessed = event.key;
