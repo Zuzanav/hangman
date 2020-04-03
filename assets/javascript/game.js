@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('#score-box').css('visibility','hidden');
     $('#randomWord').css('visibility','hidden');
     $('#you-win').css('visibility','hidden');
-    // $('#buttons').css('display','none');
+    $('#buttons').css('display','none');
 
     // START BUTTON
     $('#resetButton').css('visibility','visible');
@@ -60,10 +60,6 @@ function wholeGame() {
 
             // display the buttons DIV 
             $('#buttons').css('display','block');
-
-            // var btnBox = document.createElement("DIV");
-            // btnBox.id = "buttons";
-            // console.log("HELLO: " + btnBox.id);
 
             // hide box that displays incorrect guesses 
             $('#letters-guessed-box').css('display','none')
@@ -277,8 +273,6 @@ function wholeGame() {
 
     // WATCH FOR USER TO CLICK RESET BUTTON -----------------------------------
     document.getElementById("resetButton").onclick = function () {
-
-
 
         // RESTART GAME --------
         wholeGame();

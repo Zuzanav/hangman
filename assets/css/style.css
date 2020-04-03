@@ -8,7 +8,13 @@ body {
     margin: 0%;
 }
 
-/* WORD GUESS TITLE -------------------------*/
+
+/* KEYBOARD - MOBILE ONLY -----------------------*/
+#buttons {
+    margin: 5%;
+    text-align: center;
+}
+
 #azButton  {
     font-family: 'Oxanium';
     font-size: 20px;
@@ -20,54 +26,56 @@ body {
     background-color: black;
     justify-self: center;
     padding: 5px;
-    margin: 5px 5px 5px 5px;
-    justify-self: center;
+    margin: 5px;
+
 }
+/* ----------------------------------------------*/
 
 
+
+/* WORD GUESS TITLE -------------------------*/
 #title-box {
     font-family: 'Oxanium';
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin: 5% 0% 0% 0%;
+    grid-template-columns: 1fr;
 
     -webkit-animation: tracking-in-expand-fwd 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
     animation: tracking-in-expand-fwd 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
 }
 
-@-webkit-keyframes tracking-in-expand-fwd {
-    0% {
-      letter-spacing: -0.5em;
-      -webkit-transform: translateZ(-700px);
-              transform: translateZ(-700px);
-      opacity: 0;
+    /* ANIMATION FOR TITLE  ------*/
+    @-webkit-keyframes tracking-in-expand-fwd {
+        0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+        opacity: 0;
+        }
+        40% {
+        opacity: 0.6;
+        }
+        100% {
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        opacity: 1;
+        }
     }
-    40% {
-      opacity: 0.6;
+    @keyframes tracking-in-expand-fwd {
+        0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+        opacity: 0;
+        }
+        40% {
+        opacity: 0.6;
+        }
+        100% {
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        opacity: 1;
+        }
     }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
-  }
-  @keyframes tracking-in-expand-fwd {
-    0% {
-      letter-spacing: -0.5em;
-      -webkit-transform: translateZ(-700px);
-              transform: translateZ(-700px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
-  }
 
 #the-title {
     justify-self: center;
@@ -75,6 +83,7 @@ body {
     color:rgb(88, 16, 5);
     text-shadow: 0 0 40px #D02116;
     -webkit-text-stroke: 2px #D02116;
+    margin-top: 5%;
 }
 
 /* SCORE BOX ---------------------------------- */
@@ -196,37 +205,46 @@ body {
     color: #FB3287;
 }
 
-
-#music-controller{
-    color: white;
-    background-color: black;
-}
-
+/* MUSIC --------------------------------------- */
 #music-div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: black;
     border: 1px solid #FB3287;
     border-radius: 5px;
-    box-shadow: inset 0 0 10px #F8A2D4,
+    box-shadow: inset 0 0 4px #F8A2D4,
                 0 0 5px #F8A2D4;
     max-width: 100px;    
-    justify-self: center;
-    /* position: absolute;
-    right: 100px; */
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 #music-player, #pause-player {
-    font-size: 30px;
-    width: 50px;
+    font-size: 20px;
     background-color: rgba(76, 175, 80, 0.0);
     color: #FB3287;
+    text-shadow: 0 0 40px #23CDF2;
     border: none;
     justify-self: center;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES ----------------------------*/
 
-@media only screen and (min-width: 360px) {
+@media only screen and (max-width: 770px) {
+    #music-div {
+        position: absolute;
+        right: 10px;
+        margin-top: 0%;
+    }
 
+    #the-title {
+        margin-top: 15%;
+        font-size: 45px;
+    }
+
+    #music-player, #pause-player {
+        font-size: 16px;
+        width: 25px;
+    }
   }
