@@ -218,6 +218,14 @@ function wholeGame() {
 
         } // ---------------------- end of if/else statement
 
+        function disableKeyboard() {
+        // RESET THE KEYBOARD - MOBILE ONLY ------------
+        // retreive the "buttons" DIV
+        var btnDiv = document.getElementById('buttons');
+        // remove all the individual letter buttons (all childs) 
+        while (btnDiv.firstChild) btnDiv.removeChild(btnDiv.firstChild);
+        }
+        //----------------------------------------------
 
         // FOURTH | DETERMINING THE WIN ------------------------------------------
         // IF the answerArray doesn't include anymore underscores - user WINS!
@@ -227,7 +235,7 @@ function wholeGame() {
 
                 $('#you-win').css('visibility','visible').html("YOU WIN");
                 $('#resetButton').html('Play Again!').css('visibility','visible');
-
+                disableKeyboard()
 
             }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
             document.onkeyup = function (e) {
@@ -238,7 +246,7 @@ function wholeGame() {
         
             setTimeout(function(){
                 $('#you-win').css('visibility','visible').html("YOU LOSE");
-
+                disableKeyboard()
 
 
                 $('#resetButton').html('Play Again!').css('visibility','visible');
@@ -270,13 +278,9 @@ function wholeGame() {
     // WATCH FOR USER TO CLICK RESET BUTTON -----------------------------------
     document.getElementById("resetButton").onclick = function () {
 
-        // var olddata = document.getElementById("buttons").lastChild;
-        // document.getElementById("buttons").removeChild(olddata);
 
 
-        var foo = document.getElementById('buttons');
-        while (foo.firstChild) foo.removeChild(foo.firstChild);
-
+        // RESTART GAME --------
         wholeGame();
     }
     // -----------------------------------------------------
