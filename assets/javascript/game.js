@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('#score-box').css('visibility','hidden');
     $('#randomWord').css('visibility','hidden');
     $('#you-win').css('visibility','hidden');
-    $('#buttons').css('display','none');
+    // $('#buttons').css('display','none');
 
     // START BUTTON
     $('#resetButton').css('visibility','visible');
@@ -57,9 +57,13 @@ function wholeGame() {
 
         // IF the user is on Mobile (770px or less), then...
         if (viewportWidth <= 771) {
-            
+
             // display the buttons DIV 
             $('#buttons').css('display','block');
+
+            // var btnBox = document.createElement("DIV");
+            // btnBox.id = "buttons";
+            // console.log("HELLO: " + btnBox.id);
 
             // hide box that displays incorrect guesses 
             $('#letters-guessed-box').css('display','none')
@@ -74,6 +78,7 @@ function wholeGame() {
 
             // Run loop through alphabet ... 
             for (i=0; i < alphabet.length; i++) {
+
                 //create a button for each letter 
                 var btn = document.createElement("BUTTON");
                 //give button class
@@ -151,7 +156,7 @@ function wholeGame() {
         let letterGuessed = event.key;
 
         if (letterGuessed = "undefined") {
-            letterGuessed = guess
+            letterGuessed = guess;
         };
         console.log("LETTER GUESSED: " + letterGuessed);
 
@@ -221,8 +226,9 @@ function wholeGame() {
             setTimeout(function(){
 
                 $('#you-win').css('visibility','visible').html("YOU WIN");
-
                 $('#resetButton').html('Play Again!').css('visibility','visible');
+
+
             }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
             document.onkeyup = function (e) {
                 e.preventDefault(); 
@@ -232,6 +238,9 @@ function wholeGame() {
         
             setTimeout(function(){
                 $('#you-win').css('visibility','visible').html("YOU LOSE");
+
+
+
                 $('#resetButton').html('Play Again!').css('visibility','visible');
             }, 500); //wait 500 milliseconds to allow last letter to render on the DOM 
             document.onkeyup = function (e) {
@@ -260,6 +269,14 @@ function wholeGame() {
 
     // WATCH FOR USER TO CLICK RESET BUTTON -----------------------------------
     document.getElementById("resetButton").onclick = function () {
+
+        // var olddata = document.getElementById("buttons").lastChild;
+        // document.getElementById("buttons").removeChild(olddata);
+
+
+        var foo = document.getElementById('buttons');
+        while (foo.firstChild) foo.removeChild(foo.firstChild);
+
         wholeGame();
     }
     // -----------------------------------------------------
