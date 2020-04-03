@@ -6,9 +6,11 @@ $(document).ready(function() {
     $('#score-box').css('visibility','hidden');
     $('#randomWord').css('visibility','hidden');
     $('#you-win').css('visibility','hidden');
+    $('#buttons').css('display','none');
 
     // START BUTTON
     $('#resetButton').css('visibility','visible');
+
 
     // MUSIC CONTROLLERS ----------------------------------------------
 
@@ -36,12 +38,58 @@ $(document).ready(function() {
 
 // HANGMAN GAME CONTAINER ================================================================
 function wholeGame() {
-
     
     // HIDE GAME TEXT
     $('#score-box').css('visibility','visible');
     $('#randomWord').css('visibility','visible');
     $('#you-win').css('visibility','hidden');
+
+    // FOR MOBILE ONLY ------------------------------------------------------------
+
+    // define alphabet for mobile-screen keyboard
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+    'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+      
+    // collect the viewportWidth user is on
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        // IF the user is on Mobile (770px or less), then...
+        if (viewportWidth <= 771) {
+            
+            // display the buttons DIV 
+            $('#buttons').css('display','block');
+
+            // hide box that displays incorrect guesses 
+            $('#letters-guessed-box').css('display','none')
+
+            function dynamicEvent() {
+                var guess = (this.innerHTML);
+                console.log(guess);
+                $(this).css('color', '#FB3287');
+                $(this).css('border', '1px solid #FB3287');
+                game(guess);
+              }
+
+            // Run loop through alphabet ... 
+            for (i=0; i < alphabet.length; i++) {
+                //create a button for each letter 
+                var btn = document.createElement("BUTTON");
+                //give button class
+                btn.id = "azButton";
+                //include letter from the alphabet
+                btn.innerHTML = alphabet[i];
+                //add to the buttons DIV in HTML 
+                document.getElementById("buttons").appendChild(btn)
+                //on button click, run dynamicEvent function
+                btn.onclick = dynamicEvent;
+            }
+        
+        } // end IF statement for Mobile 
+
+
+    //===========================================================================
 
     // VARIABLES ----------------------------------------------------------------
     // Array with all letters of the alphabet for computer to choose from 
@@ -96,14 +144,16 @@ function wholeGame() {
 
     // FUNCTIONS =====================================================================
 
-    function game() {
-
-        $("#random-word-box").focus();
+    function game(guess) {
 
         // FIRST ---------------------------------------------
         // save user's guessed letter
         let letterGuessed = event.key;
-        console.log(letterGuessed);
+
+        if (letterGuessed = "undefined") {
+            letterGuessed = guess
+        };
+        console.log("LETTER GUESSED: " + letterGuessed);
 
         // SECOND -------------------------------------------
         // compare user's guess with characters in array
@@ -212,7 +262,5 @@ function wholeGame() {
     document.getElementById("resetButton").onclick = function () {
         wholeGame();
     }
-
     // -----------------------------------------------------
-
 }

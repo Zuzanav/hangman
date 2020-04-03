@@ -9,6 +9,21 @@ body {
 }
 
 /* WORD GUESS TITLE -------------------------*/
+#azButton  {
+    font-family: 'Oxanium';
+    font-size: 20px;
+    background-color: black;
+    color:#23CDF2;
+    border: 1px solid #23CDF2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #F8A2D4;
+    background-color: black;
+    justify-self: center;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    justify-self: center;
+}
+
 
 #title-box {
     font-family: 'Oxanium';
