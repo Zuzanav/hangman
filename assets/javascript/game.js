@@ -25,6 +25,7 @@ $(document).ready(function() {
     // When Musical Note button is pressed, play music 
     document.getElementById("music-player").onclick = function () {
         document.getElementById("music-controller").play();
+        console.log('pressed')
     }
 
     // When pause button is pressed, paused music 
