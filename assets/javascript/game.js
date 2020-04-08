@@ -160,9 +160,10 @@ function wholeGame() {
         // save user's guessed letter
         let letterGuessed = event.key;
 
-        if (letterGuessed = "undefined") {
+        if (letterGuessed === undefined) {
             letterGuessed = guess;
         };
+        
         console.log("LETTER GUESSED: " + letterGuessed);
 
         // SECOND -------------------------------------------
